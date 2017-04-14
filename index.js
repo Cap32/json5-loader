@@ -18,7 +18,7 @@ function Json5Plugin (source) {
 
   this.values = [value];
 
-  return 'module.exports = ' + JSON.stringify(value, null, '\t');
+  return 'module.exports = ' + JSON.stringify(value, null, this.minimize ? 0 : '\t');
 }
 // es2015 modules support
 Json5Plugin.default = Json5Plugin;
