@@ -23,6 +23,12 @@ describe(PROJECT_NAME, function () {
     done();
   });
 
+  it('should minimized', function (done) {
+    var content = loader.call({ minimize: true }, staticJson5);
+    should(content).be.eql('module.exports = {"name":"test"}');
+    done();
+  });
+
   it('should fire cacheable', function (done) {
     var cacheable = function () {
       done();
